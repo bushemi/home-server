@@ -1,8 +1,8 @@
 package servlets;
 
 
-import templater.PageGenerator;
 import accounts.AccountService;
+import templater.PageGenerator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,9 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class AuthServlet extends HttpServlet {
+public class RegistrationServlet extends HttpServlet {
 
-    private final String AUTH_HTML = "auth.html";
+    private final String REGISTRATION_HTML = "registration.html";
     private String login = "";
     private String password = "";
     private String email = "";
@@ -27,7 +27,7 @@ public class AuthServlet extends HttpServlet {
         Map<String, Object> pageVariables = new HashMap<>();
         pageVariables.put("lastLogin", login == null ? "" : login);
 
-        response.getWriter().println(PageGenerator.getPage(AUTH_HTML, pageVariables));
+        response.getWriter().println(PageGenerator.getPage(REGISTRATION_HTML, pageVariables));
 
         response.setContentType("text/html;charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
@@ -56,6 +56,6 @@ public class AuthServlet extends HttpServlet {
         Map<String, Object> pageVariables = new HashMap<>();
         pageVariables.put("lastLogin", login == null ? "" : login);
 
-        response.getWriter().println(PageGenerator.getPage(AUTH_HTML, pageVariables));
+        response.getWriter().println(PageGenerator.getPage(REGISTRATION_HTML, pageVariables));
     }
 }
